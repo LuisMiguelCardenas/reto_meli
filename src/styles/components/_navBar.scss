@@ -5,19 +5,39 @@
   flex-direction: row;
   padding: 10px 0px;
   justify-content: center;
-}
-.iconSearch {
-  color: $grey;
-  background-color: $white;
-  width: 20px;
-  height: 22px;
-  padding: 9px;
+  display: flex;
+  align-items: center;
+  form {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    button{
+      height: 53px;
+      width: 51px;
+      background-color: white;
+      border-radius: 2px;
+      border: none;
+      position: inherit;
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+    }
+  }
 }
 
-.logo {
-  width: 80px;
-  height: auto;
-}
 .inputNavBar {
-  width: 70%;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+  height: 39px;
+  padding: 7px 60px 9px 15px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.navLogo {
+  background-image: url(https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.19.1/mercadolibre/logo__large_plus.png);
+  height: 34px;
+  top: 11px;
+  width: 134px;
+  margin: 0px 40px;
 }

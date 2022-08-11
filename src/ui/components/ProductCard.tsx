@@ -16,14 +16,16 @@ interface Props {
 export const ProductCard: React.FC<Props> = (product) => {
     return (
         <div className='productCard'>
-            <p className='title'>{product.title}</p>
-            <p className='price'>$ {product.price}</p>
-            <img className='image' src={product.thumbnail} alt="" />
+            <a className='productCardImage' href={`item/${product.id}`}>
+                <img className='image' src={product.thumbnail} alt="" />
+            </a>
+            <a className='productCardDetail' href={`item/${product.id}`}>
+                <p className='title'>{product.title}</p>
+                <p className='price'>$ {product.price.toLocaleString()}</p>
             {
                 product.shipping.free_shipping && <p className='shipping'>Envio gratis</p>
             }
-            <Link to= {`item/${product.id}`} >ver mas..</Link>
-            <a href={`item/${product.id}`}> ver mas</a>
+            </a>
         </div>
     )
 }

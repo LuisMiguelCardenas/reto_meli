@@ -33,16 +33,17 @@ export const NavBar = () => {
   return (
     <>
       <div className="navbar">
-        <img className='logo' src="./assets\LogoMercadoLibre.svg-1.png" alt="Logo Mercadolibre" />
+        <a className="navLogo" href="/"></a>
         <form onSubmit={e => onSubmit(e)}>
           <input
             className='inputNavBar'
             placeholder='Buscar productos, marcas y más...'
-            type="text" value={inputValue}
+            type="text" 
+            value={inputValue}
             onChange={(e) => onInputChange(e)}
           />
           <Link to='/'>
-            <button onClick={() => onHandleClick()} >
+            <button onClick={() => onHandleClick()}>
               <FontAwesomeIcon className='iconSearch' icon={faMagnifyingGlass} />
             </button>
           </Link>
