@@ -1,46 +1,67 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { getItemDetailDescription } from '../../services/api/items.api';
+import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTruckFast } from '@fortawesome/free-solid-svg-icons'
+import { getItemDetailDescription } from "../../services/api/items.api";
+import { Breadcrumb } from "./Breadcrumb";
 
 interface Props {
-    id: string;
-    title: string;
-    price: string;
-    condition: string;
-    pictures: any[];
-    thumbnail: string;
-    shipping: {
-        free_shipping: boolean
-    };
-    plain_text: string
-
-};
+  id: string;
+  title: string;
+  price: string;
+  condition: string;
+  pictures: any[];
+  thumbnail: string;
+  shipping: {
+    free_shipping: boolean;
+  };
+  plain_text: string;
+}
 
 export const ProductDetail: React.FC<Props> = (item) => {
-    const [description, setDescription] = useState<any>()
+  const [description, setDescription] = useState<any>();
 
-    const getData = async () => {
-        const dataDesc = await getItemDetailDescription(item.id);
-        setDescription(dataDesc);
-    }
+  const getData = async () => {
+    const dataDesc = await getItemDetailDescription(item.id);
+    setDescription(dataDesc);
+  };
 
-    useEffect(() => {
-        getData()
-    }, [])
-    console.log(description)
-    return (
-        <div>
-            <h1>{item.title}</h1>
-            <p>{item.condition}</p>
-            <img src={item.pictures[0].url} alt="" />
-            <p>{item.price}</p>
-            <button>Comprar</button>
-            {
-                description ?
-                    <p>{description.plain_text}</p>
-                    :
-                    <p>cargando</p>
-            }
+  useEffect(() => {
+    getData();
+  }, []);
+console.log(item.shipping.free_shipping)
+  return (
+    <>
+      <div className="productDatailContainer">
+        <Breadcrumb text={item.title}/>
+        <div className="ProductDetail">
+          <div className="productDetailImage">
+            <img 
+              src={item.pictures[0].url}
+              alt=""
+            />
+          </div>
+          <div className="productDetailProps">
+            <p className="condition">{item.condition === 'new' && 'Nuevo'}</p>
+            <h3 className="title">{item.title}</h3>
+            <p className="price">$ {item.price.toLocaleString() }</p>
+            <div className="shipping">
+                <FontAwesomeIcon className='iconTruck' icon={faTruckFast} />
+                <p className="title">Envío gratis a nivel nacional</p>
+                <p className="description">Conoce los tiempos y las formas de envío.</p>
+            </div>
+            <button className="buyButton">Comprar ahora</button>
+            <button className="cartButton">Agregar al carrito</button>
+          </div>
         </div>
-    )
-}
+        {description ? (
+            <div className="productDetailDescription">
+                <h3>Descripción</h3>
+                <p>{description.plain_text}</p>
+            </div>
+        ) : (
+          <p>cargando</p>
+        )}
+      </div>
+    </>
+  );
+};

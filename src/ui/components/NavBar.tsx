@@ -4,10 +4,12 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { getItems } from '../../services/api/items.api'
 import { Link } from 'react-router-dom'
 import { ProductCard } from './ProductCard'
+import { Breadcrumb } from './Breadcrumb'
 
 export const NavBar = () => {
 
   const [inputValue, setfInputValue] = useState('');
+  const [category, setCategory] = useState('');
   const [products, setProducts] = useState<any>([]);
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,9 +26,9 @@ export const NavBar = () => {
     const items = await getItems(inputValue);
     setfInputValue('')
     setProducts(items)
+    setCategory(inputValue);
   }
-
-  console.log(products)
+  
 
   return (
     <>
@@ -48,7 +50,12 @@ export const NavBar = () => {
       </div>
       <div className='productListContanier'>
         {
-          products.length > 0 &&
+          category.length > 0 ? <Breadcrumb text={category}/> : null
+  
+        }
+        
+        {
+          products.length > 0 ?
           products.map( (product:any) => (
 
             <ProductCard 
@@ -57,6 +64,8 @@ export const NavBar = () => {
             />
 
           ))
+        :
+        <p>Inice una busqueda</p>
         }
       </div>
     </>

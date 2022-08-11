@@ -1,0 +1,135 @@
+.productDetailPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.productDatailContainer {
+  align-items: center;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 1px 12px 10px -3px $darkGrey;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  width: 60%;
+}
+.ProductDetail {
+  display: flex;
+  justify-content: end;
+}
+.productDetailProps {
+  border-radius: 10px;
+  border: solid 1px $grey;
+  padding: 20px;
+  .title {
+    margin-bottom: 8px;
+    margin-right: 28px;
+  }
+  .condition {
+    color: $darkGrey;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  .price {
+    font-size: 36px;
+    font-weight: 300;
+    margin: 20px 0px;
+  }
+  .shipping {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1 / 2;
+    grid-template-columns: repeat(10, 1fr);
+    margin-bottom: 25px;
+
+    .iconTruck {
+      color: $green;
+      grid-column: 1;
+      grid-row: 1 / 2;
+    }
+    .title {
+      color: $green;
+      font-size: 16px;
+      grid-column: 2 / 10;
+      grid-row: 1 / 1;
+      margin: 0px;
+    }
+    .description {
+      color: $darkGrey;
+      font-size: 14px;
+      grid-column: 2 / 10;
+      grid-row: 2 / 2;
+    }
+  }
+  .buyButton {
+    background-color: $blue;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 0 0 $white;
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+    height: 10%;
+    margin: 5px 0px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $darkBlue;
+    }
+  }
+  .cartButton {
+    background-color: $trnasparentBlue;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 0 0 $white;
+    color: $blue;
+    font-size: 16px;
+    font-weight: 600;
+    height: 10%;
+    margin: 5px 0px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $trnasparentBlueDark;
+    }
+  }
+}
+
+.productDetailDescription {
+  background-color: $white;
+}
+
+.productDetailImage {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.productDetailDescription {
+  border-top: solid 1px $grey;
+  margin: 20px 0px;
+  padding: 20px;
+
+  h3 {
+    margin: 10px 0px;
+  }
+  p {
+    color: $darkGrey;
+    text-align: justify;
+  }
+}
+
+.productDetailDescription{
+    h3{
+        font-size: 24px;
+        font-weight: 400;
+        padding-bottom: 24px;
+    }
+    p{
+        font-size: 20px;
+    }
+}
