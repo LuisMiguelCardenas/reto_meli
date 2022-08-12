@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { getItems } from '../../services/api/items.api'
-import { Link } from 'react-router-dom'
-import { ProductCard } from './ProductCard'
-import { Breadcrumb } from './Breadcrumb'
+import { Link, Navigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { NotesState } from '../../reducers/notesReducer'
+import { addNote } from '../../actions'
 
 export const NavBar = () => {
+let funciona = false
+  const notes = useSelector<NotesState, NotesState["notes"]>(
+    (state) => state.notes
+  );
+
+  const dispatch = useDispatch();
+
+  const onAddNote = (note: string) => {
+    dispatch(addNote(note));
+  };
 
   const [inputValue, setfInputValue] = useState('');
-  const [category, setCategory] = useState('');
-  const [products, setProducts] = useState<any>([]);
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setfInputValue(e.target.value)
@@ -21,17 +29,22 @@ export const NavBar = () => {
     if (inputValue.trim().length <= 1) return;
     onHandleClick();
   }
-
-  const onHandleClick = async () => {
-    const items = await getItems(inputValue);
+  
+  const onHandleClick = () => {
     setfInputValue('')
-    setProducts(items)
-    setCategory(inputValue);
+    onAddNote(inputValue)
   }
   
-
+  // if ( inputValue.trim().length > 11 && inputValue.includes('MLA') && inputValue.startsWith('MLA')) {
+  //   console.log('FUNCIONA')
+  //   funciona = true
+  // }
+console.log(notes)
   return (
     <>
+    {/* {
+      notes[notes.length - 1].startsWith('MLA') && <Navigate to={`/item/${inputValue}`} replace={true} />
+    } */}
       <div className="navbar">
         <a className="navLogo" href="/"></a>
         <form onSubmit={e => onSubmit(e)}>
@@ -49,7 +62,7 @@ export const NavBar = () => {
           </Link>
         </form>
       </div>
-      <div className='productListContanier'>
+      {/* <div className='productListContanier'>
         {
           category.length > 0 ? <Breadcrumb text={category}/> : null
   
@@ -68,7 +81,7 @@ export const NavBar = () => {
         :
         <p>Inice una busqueda</p>
         }
-      </div>
+      </div> */}
     </>
   )
 }

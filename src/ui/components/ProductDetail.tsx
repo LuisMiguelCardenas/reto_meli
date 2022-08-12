@@ -28,7 +28,8 @@ export const ProductDetail: React.FC<Props> = (item) => {
   useEffect(() => {
     getData();
   }, []);
-console.log(item.shipping.free_shipping)
+
+  if(!item) { return <p>Pagina no encontrada</p> }
   return (
     <>
       <div className="productDatailContainer">

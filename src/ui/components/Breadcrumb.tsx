@@ -19,16 +19,15 @@ export const Breadcrumb: React.FC<Props> = ({ text }) => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [text]);
 
-  console.log(detailCategory);
 
   return (
     
     <div className="breadcrumbContainer">
-      {detailCategory && <p>{detailCategory[0].category_name}</p>}
-      {detailCategory && detailCategory[0].attributes.map((category: any) => (
-        <p><FontAwesomeIcon className='iconAngle' icon={faAngleLeft} />{category.value_name}</p>
+      {detailCategory && <p>{detailCategory[0]?.category_name}</p>}
+      {detailCategory && detailCategory[0]?.attributes.map((category: any) => (
+        <p key ={ category.id }><FontAwesomeIcon className='iconAngle' icon={faAngleLeft} />{category.value_name}</p>
       ))}
     </div>
   );

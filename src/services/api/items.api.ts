@@ -9,10 +9,14 @@ export const getItems = async(item:any) => {
   };
 
   export const getItemDetail = async(id:string) => {
-    const resp = await fetch(`${BASE_URL}/items/${id}`)
-    const data = await resp.json()
-    
-    return data;
+    try {
+      const resp = await fetch(`${BASE_URL}/items/${id}`)
+      const data = await resp.json()
+      
+      return data;
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   export const getItemDetailDescription = async(id:string) => {
