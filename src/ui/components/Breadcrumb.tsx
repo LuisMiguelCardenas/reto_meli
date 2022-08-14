@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const Breadcrumb: React.FC<Props> = ({ text }) => {
-    console.log(text)
+
   const [detailCategory, setDetailCategory] = useState<any>();
 
   const getData = async () => {
@@ -21,13 +21,12 @@ export const Breadcrumb: React.FC<Props> = ({ text }) => {
     getData();
   }, [text]);
 
-
   return (
-    
+
     <div className="breadcrumbContainer">
       {detailCategory && <p>{detailCategory[0]?.category_name}</p>}
       {detailCategory && detailCategory[0]?.attributes.map((category: any) => (
-        <p key ={ category.id }><FontAwesomeIcon className='iconAngle' icon={faAngleLeft} />{category.value_name}</p>
+        <p key={category.id}><FontAwesomeIcon className='iconAngle' icon={faAngleLeft} />{category.value_name}</p>
       ))}
     </div>
   );

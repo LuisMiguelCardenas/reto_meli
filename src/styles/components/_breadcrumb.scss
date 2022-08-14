@@ -1,18 +1,17 @@
-.breadcrumbContainer{
-width: 100%;
-    background-color: $grey;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    padding: 0px 20px;
-    margin-bottom: 20px;
-    
-    .iconAngle{
-        margin: 0px 10px;
-    }
-    p{
-        color: $blue;
-        cursor: pointer;
-        font-size: 12px;
-    }
+.breadcrumbContainer {
+  align-items: center;
+  background-color: $grey;
+  display: flex;
+  height: 36px;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+  width: 100%;
+  .iconAngle {
+    margin: 0px 10px;
+  }
+  p {
+    color: $blue;
+    cursor: pointer;
+    font-size: 12px;
+  }
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 interface Props {
     id: string;
@@ -9,9 +8,7 @@ interface Props {
     shipping: {
         free_shipping: boolean
     }
-
 };
-
 
 export const ProductCard: React.FC<Props> = (product) => {
     return (
@@ -22,9 +19,9 @@ export const ProductCard: React.FC<Props> = (product) => {
             <a className='productCardDetail' href={`item/${product.id}`}>
                 <p className='title'>{product.title}</p>
                 <p className='price'>$ {product.price.toLocaleString()}</p>
-            {
-                product.shipping.free_shipping && <p className='shipping'>Envio gratis</p>
-            }
+                {
+                    product.shipping.free_shipping && <p className='shipping'>Envio gratis</p>
+                }
             </a>
         </div>
     )

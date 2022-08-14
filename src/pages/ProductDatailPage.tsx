@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getItemDetail, getItemDetailDescription } from '../services/api/items.api';
-import { ProductDetail } from '../ui/components/ProductDetail';
+import { Loading, NotFound, ProductDetail } from '../ui';
 
 export const ProductDatailPage = () => {
 
@@ -20,17 +20,15 @@ export const ProductDatailPage = () => {
     getData()
   }, [])
 
-  if(!item) { return <p>Pagina no encontrada</p> }
+  if (!item) { return <Loading /> }
 
   return (
     <div className='productDetailPage'>
       {
-      item ?
-      <>
-        <ProductDetail {...item}/>
-      </>
-      :
-      <h1>Cargando...</h1>
+        item.id ?
+          <ProductDetail {...item} />
+          :
+          <NotFound message={item.message} />
       }
     </div>
   )

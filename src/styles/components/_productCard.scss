@@ -1,21 +1,21 @@
 .productListContanier{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
 }
 
 .productCard{
     background-color: $white;
     border-radius: 4px 4px 0 0;
-    width: 40%;
-    padding: 30px 50px 50px 0px;
-    margin-bottom: 2px;
     display: grid;
     grid-column: 1;
     grid-row: 1 / 2;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2px;
+    padding: 30px 50px 50px 0px;
+    width: 40%;
 }
 
 .productCardImage{

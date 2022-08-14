@@ -1,4 +1,4 @@
 import { createStore } from "redux";
-import { notesReducer } from "../reducers/notesReducer";
+import { inputSearchReducer } from "../reducers/inputSearchReducer";
 
-export const store = createStore(notesReducer)
+export const store = createStore(inputSearchReducer)
