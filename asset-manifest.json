@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reto_meli/static/css/main.2e8ed7ff.css",
+    "main.js": "/reto_meli/static/js/main.23f9cc62.js",
+    "index.html": "/reto_meli/index.html",
+    "main.2e8ed7ff.css.map": "/reto_meli/static/css/main.2e8ed7ff.css.map",
+    "main.23f9cc62.js.map": "/reto_meli/static/js/main.23f9cc62.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e8ed7ff.css",
+    "static/js/main.23f9cc62.js"
+  ]
+}
