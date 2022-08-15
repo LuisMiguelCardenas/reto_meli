@@ -2,7 +2,7 @@
 
 <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.19.1/mercadolibre/logo__large_plus.png" alt="logo mercado libre"/>
 
-Este protyecto está estructurado para relaizar las funciones de búsqueda de los productos de prueba de mercadolibre con su pagina de detalles del proeduto.
+Este protyecto está estructurado para relaizar las funciones de búsqueda de los productos de prueba de mercadolibre con su pagina de detalles del producto uto.
 
 El proyecto funciona como una SPA cuya base es React. 
 
@@ -11,7 +11,7 @@ Las tecnologias empleadas en el proyecto son:
 - React js 18.2.0,
 Es el corazon del proyecto
 - TypeScript 4.7.4,
-Se emplea Typescript para tipar el lenguaje js con el proposito de ser una ayuda en el desarrollo contribuir a la escalabilidad y mantenimiento del código.
+Se emplea Typescript para tipar el lenguaje js con el propósito de ser una ayuda en el desarrollo,  contribuir a la escalabilidad y mantenimiento del código.
 - Redux 4.2.0,
 Se emplea para almancenar el estado de manera general, para este caso las diferentes busquedas mediante la variable `inputSearch`. 
 - Sass 1.54.3,
