@@ -26,12 +26,12 @@ export const ProductDetail: React.FC<DetailProduct> = (item) => {
         <Breadcrumb text={item.title} />
         <div className="productDetail">
           <div className="productDetailImage">
-            <Carousel cols={1} rows={1} gap={10} loop>
+            <Carousel cols={1} rows={1} gap={0} loop>
               {
                 item.pictures.map(item =>
 
-                  <Carousel.Item>
-                    <img width="100%" src={item.url} />
+                  <Carousel.Item key={item.id}>
+                    <img  width="50%" src={item.url} />
                   </Carousel.Item>
                 )
               }
