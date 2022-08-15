@@ -3,15 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { addNote } from '../../actions/actions'
+import { addInputSearch } from '../../actions/actions'
 
 export const NavBar = () => {
 
   const dispatch = useDispatch();
   const [inputValue, setfInputValue] = useState('');
 
-  const onAddNote = (note: string) => {
-    dispatch(addNote(note));
+  const onAddInputSearch = (search: string) => {
+    dispatch(addInputSearch(search));
   };
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +26,7 @@ export const NavBar = () => {
 
   const onHandleClick = () => {
     setfInputValue('')
-    onAddNote(inputValue)
+    onAddInputSearch(inputValue)
   }
 
   return (

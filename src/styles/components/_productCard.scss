@@ -1,53 +1,78 @@
-.productListContanier{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 50px;
+.productListContanier {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
 }
 
-.productCard{
-    background-color: $white;
-    border-radius: 4px 4px 0 0;
-    display: grid;
+.productCard {
+  background-color: $white;
+  border-radius: 4px 4px 0 0;
+  display: grid;
+  grid-column: 1;
+  grid-row: 1 / 2;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 2px;
+  padding: 30px 50px 50px 0px;
+  width: 60%;
+}
+
+.productCardImage {
+  display: flex;
+  justify-content: center;
+
+  .image {
     grid-column: 1;
     grid-row: 1 / 2;
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2px;
-    padding: 30px 50px 50px 0px;
-    width: 40%;
+  }
+}
+.productCardDetail {
+  grid-column: 2 / 10;
+  grid-row: 1 / 1;
+  text-decoration: none;
+  .title {
+    color: $black;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  .price {
+    color: $black;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
+.shipping {
+  grid-column: 2 / 10;
+  grid-row: 2 / 2;
+  color: $green;
+  font-size: 18px;
 }
 
-.productCardImage{
-display: flex;
-justify-content: center;
-    .image{
-        // height: 150%;
-    width: 70%;
-        grid-column: 1;
-        grid-row: 1 / 2;
+@media (max-width: 1280px) {
+  .productCardImage {
+    .image {
+      height: 60%;
+      width: 60%;
     }
+  }
 }
-.productCardDetail{
-    grid-column: 2 / 10;
-    grid-row: 1 / 1;
-    text-decoration: none;
-    .title{
-        color: $black;
-        font-size: 25px;
-        font-weight: 100;
-        line-height: 1.3;
-        margin-bottom: 20px;
-    }
-    .price{
-        color: $black;
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
+
+@media (max-width: 780px) {
+  .productCard {
+    width: 90%;
+  }
 }
-.shipping{
-    grid-column: 2 / 10;
-    grid-row: 2 / 2;
-    color: $green;
-    font-size: 18px;
+
+@media (max-width: 780px) {
+  .productCardDetail {
+    .title {
+      font-size: 18px;
+    }
+    .price {
+      font-size: 23px;
+    }
+  }
 }

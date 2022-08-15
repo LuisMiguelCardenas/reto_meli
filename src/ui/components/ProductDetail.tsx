@@ -4,23 +4,11 @@ import { faTruckFast } from '@fortawesome/free-solid-svg-icons'
 import { getItemDetailDescription } from "../../services/api/items.api";
 import { Breadcrumb } from "./Breadcrumb";
 import { Loading } from "./Loading";
+import { DetailProduct } from "../../interfaces/interfaces";
+import Carousel from 'better-react-carousel'
 
-interface Props {
-  id: string;
-  title: string;
-  price: string;
-  condition: string;
-  pictures: any[];
-  thumbnail: string;
-  shipping: {
-    free_shipping: boolean;
-  };
-  plain_text: string;
-}
-
-export const ProductDetail: React.FC<Props> = (item) => {
-  const [description, setDescription] = useState<any>();
-
+export const ProductDetail: React.FC<DetailProduct> = (item) => {
+  const [description, setDescription] = useState<DetailProduct>();
   const getData = async () => {
     const dataDesc = await getItemDetailDescription(item.id);
     setDescription(dataDesc);
@@ -31,16 +19,24 @@ export const ProductDetail: React.FC<Props> = (item) => {
   }, []);
 
   if (!item) { return <p>Pagina no encontrada</p> }
+
   return (
     <>
       <div className="productDatailContainer">
         <Breadcrumb text={item.title} />
-        <div className="ProductDetail">
+        <div className="productDetail">
           <div className="productDetailImage">
-            <img
-              src={item.pictures[0].url}
-              alt=""
-            />
+            <Carousel cols={1} rows={1} gap={10} loop>
+              {
+                item.pictures.map(item =>
+
+                  <Carousel.Item>
+                    <img width="100%" src={item.url} />
+                  </Carousel.Item>
+                )
+              }
+            </Carousel>
+
           </div>
           <div className="productDetailProps">
             <p className="condition">{item.condition === 'new' && 'Nuevo'}</p>

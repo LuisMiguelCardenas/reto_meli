@@ -15,7 +15,7 @@
   padding: 0px 20px;
   width: 60%;
 }
-.ProductDetail {
+.productDetail {
   display: flex;
   justify-content: end;
 }
@@ -134,3 +134,34 @@
         font-size: 20px;
     }
 }
+
+@media (max-width: 950px) {
+  .productDetailImage{
+    img{
+      height: 70%;
+      width: 80%;
+    }
+
+  }
+}
+
+@media (max-width: 950px) {
+  .productDetail {
+    flex-direction: column;
+  }
+  .buyButton {
+    padding: inherit;
+  }
+  .cartButton {
+    padding: inherit;
+  }
+}
+
+.rsis-container {
+  width: 200px !important;
+}
+.rsis-image {
+  background-size: 100px 300px !important;
+
+}
+

@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Meli app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.19.1/mercadolibre/logo__large_plus.png" alt="logo mercado libre"/>
 
-## Available Scripts
+Este protyecto está estructurado para relaizar las funciones de búsqueda de los productos de prueba de mercadolibre con su pagina de detalles del proeduto.
 
-In the project directory, you can run:
+El proyecto funciona como una SPA cuya base es React. 
+
+Las tecnologias empleadas en el proyecto son:
+
+- React js 18.2.0,
+Es el corazon del proyecto
+- TypeScript 4.7.4,
+Se emplea Typescript para tipar el lenguaje js con el proposito de ser una ayuda en el desarrollo contribuir a la escalabilidad y mantenimiento del código.
+- Redux 4.2.0,
+Se emplea para almancenar el estado de manera general, para este caso las diferentes busquedas mediante la variable `inputSearch`. 
+- Sass 1.54.3,
+Como procesador de CSS
+- React Router Dom 6.3.0,
+Se emplea para manejar las rutas del proyecto. 
+- Fontawesome 6.1.2,
+Libreria de iconos
+
+## Estructura
+- node_modules, dependencias del proyecto
+- public, index.html e imagenes publicas del proyecto
+- src, Compuesto por:
+    - actions
+Acciones del manejador de estado
+    - interfaces
+Interfaces 
+    - pages
+Paginas del proyecto
+    - reducers
+Metodos del manejador de estado
+    - router
+Rutas del proyecto
+    - services
+Aloja los endpoints y los metodos para hacer los llamados mediante Fetch
+    - store
+store de redux
+    - styles
+Todos los estilos están en esta carpeta, dividida en los estilos de los componentes y las variables de sass
+    - ui, 
+Se alojan los componenetes de la interfaz de usuario
+
+
+
+## Scripts
+
+En el directorio del proyecto usar el script
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para ejecutar el proyecto en el modo de desarrollo en el buscador en el puerto 3000
+[http://localhost:3000](http://localhost:3000)
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Crea el proyecto en produccion
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

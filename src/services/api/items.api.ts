@@ -1,6 +1,6 @@
 import { BASE_ITEMS, BASE_ITEMS_CATEGORY, BASE_URL } from "../endPoints/items.endpoint";
 
-export const getItems = async(item:any) => {
+export const getItems = async(item:string) => {
   try {
     const resp = await fetch(`${BASE_ITEMS}${item}`)
     const { results } = await resp.json()
@@ -33,7 +33,7 @@ export const getItems = async(item:any) => {
     }
   };
 
-  export const getItemDetailCategory = async(title:any) => {
+  export const getItemDetailCategory = async(title:string) => {
     try {
       const resp = await fetch(`${BASE_ITEMS_CATEGORY}${title}`)
       const data = await resp.json()
